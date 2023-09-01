@@ -30,26 +30,26 @@ export const WeatherConditions = () => {
   return (
     <>
       {city.isLoading ? (
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+        <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
           {Array.from({ length: 4 }).map((_, i) => (
             <div
               key={i}
               role="status"
-              className="w-full h-20 rounded-lg animate-pulse bg-gray-900"
+              className="h-20 w-full animate-pulse rounded-lg bg-gray-900"
             >
               <span className="sr-only">Loading...</span>
             </div>
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+        <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
           {data.map((condition, index) => (
-            <div key={index} className="bg-gray-900 p-3 rounded-md">
-              <p className="text-gray-300/80 text-xs">{condition.title}</p>
+            <div key={index} className="rounded-md bg-gray-900 p-3">
+              <p className="text-xs text-gray-300/80">{condition.title}</p>
               <div className="mt-4 flex items-center space-x-6 lg:space-x-12">
                 {condition.icon}
                 <div className="text-center">
-                  <h2 className="text-gray-300 text-xl font-semibold">
+                  <h2 className="text-xl font-semibold text-gray-300">
                     {condition.value}
                   </h2>
                 </div>
