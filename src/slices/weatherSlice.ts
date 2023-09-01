@@ -20,7 +20,6 @@ export const weatherSlice = createSlice({
       state: CityWeatherStateType,
       { payload: city }: PayloadAction<string>
     ) => {
-      console.log("inside ac");
       state.city.isLoading = true;
       state.city.error = "";
     },
@@ -28,8 +27,6 @@ export const weatherSlice = createSlice({
       state: CityWeatherStateType,
       { payload: city }: PayloadAction<WeatherRoot>
     ) => {
-      console.log("inside suceess");
-      console.log("Payload", city);
       state.city.isLoading = false;
       state.city.data = city;
     },
